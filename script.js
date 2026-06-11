@@ -5,27 +5,114 @@ let stableViewportHeight = window.innerHeight;
 let lastLayoutWidth = window.innerWidth;
 let scrollTicking = false;
 
+let marqueeLayoutTimer;
+
 function refreshStableViewport() {
   stableViewportHeight = window.innerHeight;
+  const rowHeight = stableViewportHeight * 0.25;
+  const compactHeight = Math.min(stableViewportHeight * 0.25, 192);
 
-  if (!mobileLayoutQuery.matches) {
+  if (document.querySelector('.hero:not(.hero--compact)')) {
+    document.documentElement.style.setProperty('--hero-height', `${stableViewportHeight}px`);
+    document.documentElement.style.setProperty('--hero-row-height', `${rowHeight}px`);
+  } else {
     document.documentElement.style.removeProperty('--hero-height');
     document.documentElement.style.removeProperty('--hero-row-height');
+  }
+
+  if (document.querySelector('.hero--compact')) {
+    document.documentElement.style.setProperty('--hero-compact-height', `${compactHeight}px`);
+  } else {
+    document.documentElement.style.removeProperty('--hero-compact-height');
+  }
+}
+
+function layoutHeroMarquees() {
+  document.querySelectorAll('.marquee-track').forEach((track) => {
+    const sets = [...track.querySelectorAll('.marquee-set')];
+    if (sets.length < 2) {
+      return;
+    }
+
+    const hero = track.closest('.hero');
+    const isCompact = hero?.classList.contains('hero--compact');
+    const rowHeight = isCompact
+      ? parseFloat(getComputedStyle(hero).height) || 0
+      : stableViewportHeight * 0.25;
+    const letterHeight = Math.max(52, Math.round(rowHeight * 0.92));
+
+    sets.forEach((set) => {
+      set.style.flex = '0 0 auto';
+      set.style.width = 'auto';
+      set.style.minWidth = '0';
+
+      set.querySelectorAll('.marquee-letter').forEach((img) => {
+        img.style.height = `${letterHeight}px`;
+        img.style.maxHeight = `${letterHeight}px`;
+        img.style.width = 'auto';
+      });
+    });
+
+    track.style.width = 'auto';
+    track.style.minWidth = '0';
+    void sets[0].offsetWidth;
+
+    const setWidth = Math.ceil(sets[0].getBoundingClientRect().width);
+    if (setWidth <= 0) {
+      return;
+    }
+
+    sets.forEach((set) => {
+      set.style.flex = `0 0 ${setWidth}px`;
+      set.style.width = `${setWidth}px`;
+      set.style.minWidth = `${setWidth}px`;
+    });
+
+    track.style.width = `${setWidth * sets.length}px`;
+    track.style.minWidth = `${setWidth * sets.length}px`;
+    track.style.setProperty('--marquee-shift', `-${setWidth}px`);
+  });
+}
+
+function scheduleHeroMarqueeLayout() {
+  clearTimeout(marqueeLayoutTimer);
+  marqueeLayoutTimer = window.setTimeout(layoutHeroMarquees, 50);
+}
+
+function initHeroMarquees() {
+  if (!document.querySelector('.hero')) {
     return;
   }
 
-  const rowHeight = stableViewportHeight * 0.25;
-  document.documentElement.style.setProperty('--hero-height', `${stableViewportHeight}px`);
-  document.documentElement.style.setProperty('--hero-row-height', `${rowHeight}px`);
+  refreshStableViewport();
+  scheduleHeroMarqueeLayout();
+
+  document.querySelectorAll('.hero .marquee-letter').forEach((img) => {
+    if (img.complete) {
+      return;
+    }
+
+    img.addEventListener('load', scheduleHeroMarqueeLayout, { once: true });
+    img.addEventListener('error', scheduleHeroMarqueeLayout, { once: true });
+  });
+
+  window.setTimeout(scheduleHeroMarqueeLayout, 300);
+  window.setTimeout(scheduleHeroMarqueeLayout, 1500);
 }
 
 refreshStableViewport();
 
 window.addEventListener('orientationchange', () => {
-  window.setTimeout(refreshStableViewport, 150);
+  window.setTimeout(() => {
+    refreshStableViewport();
+    scheduleHeroMarqueeLayout();
+  }, 150);
 });
 
-mobileLayoutQuery.addEventListener('change', refreshStableViewport);
+mobileLayoutQuery.addEventListener('change', () => {
+  refreshStableViewport();
+  scheduleHeroMarqueeLayout();
+});
 
 function buildRevealChars(textEl) {
   if (!textEl) return [];
@@ -226,6 +313,7 @@ function onResize() {
   if (width !== lastLayoutWidth) {
     lastLayoutWidth = width;
     refreshStableViewport();
+    scheduleHeroMarqueeLayout();
     measureTilesMetrics();
     remeasureFloatingCta();
   }
@@ -568,11 +656,6 @@ function unpinCtaFloat() {
 function updateCtaFloat() {
   if (!ctaSeen || ctaDismissed || !ctaFloatWrap || !ctaAnchor || !originalButtonDocBottom) return;
 
-  if (mobileLayoutQuery.matches) {
-    unpinCtaFloat();
-    return;
-  }
-
   if (footerInView) {
     unpinCtaFloat();
     return;
@@ -831,3 +914,4 @@ function initLegalTiles() {
 }
 
 initLegalTiles();
+initHeroMarquees();
