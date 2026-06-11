@@ -1,4 +1,31 @@
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mobileLayoutQuery = window.matchMedia('(max-width: 900px)');
+
+let stableViewportHeight = window.innerHeight;
+let lastLayoutWidth = window.innerWidth;
+let scrollTicking = false;
+
+function refreshStableViewport() {
+  stableViewportHeight = window.innerHeight;
+
+  if (!mobileLayoutQuery.matches) {
+    document.documentElement.style.removeProperty('--hero-height');
+    document.documentElement.style.removeProperty('--hero-row-height');
+    return;
+  }
+
+  const rowHeight = stableViewportHeight * 0.25;
+  document.documentElement.style.setProperty('--hero-height', `${stableViewportHeight}px`);
+  document.documentElement.style.setProperty('--hero-row-height', `${rowHeight}px`);
+}
+
+refreshStableViewport();
+
+window.addEventListener('orientationchange', () => {
+  window.setTimeout(refreshStableViewport, 150);
+});
+
+mobileLayoutQuery.addEventListener('change', refreshStableViewport);
 
 function buildRevealChars(textEl) {
   if (!textEl) return [];
@@ -30,7 +57,7 @@ function updateReveal(chars, textEl, sectionEl) {
 
   const sectionRect = sectionEl.getBoundingClientRect();
   const textRect = textEl.getBoundingClientRect();
-  const viewportHeight = window.innerHeight;
+  const viewportHeight = stableViewportHeight;
 
   let progress;
 
@@ -145,6 +172,11 @@ function updateTilesCompress() {
 function updateTilesEntrance(introProgress) {
   if (tiles.length === 0 || !tilesZone) return;
 
+  if (!desktopTilesQuery.matches) {
+    tiles.forEach((tile) => tile.classList.add('is-visible'));
+    return;
+  }
+
   if (introProgress < 1) {
     tiles.forEach((tile) => tile.classList.remove('is-visible'));
     return;
@@ -156,7 +188,7 @@ function updateTilesEntrance(introProgress) {
   }
 
   const sectionRect = tilesZone.getBoundingClientRect();
-  const viewportHeight = window.innerHeight;
+  const viewportHeight = stableViewportHeight;
   const pastIntro = Math.max(0, -sectionRect.top);
   const flyInDistance = tilesMetrics?.runway
     ? Math.min(viewportHeight * 0.5, tilesMetrics.runway * 0.55)
@@ -169,16 +201,50 @@ function updateTilesEntrance(introProgress) {
   });
 }
 
-function onScroll() {
+function runScrollUpdates() {
   updateReveal(statementChars, statementText, statementSection);
   const tilesIntroProgress = updateReveal(tilesIntroChars, tilesIntro, tilesZone);
   updateTilesEntrance(tilesIntroProgress);
   updateTilesCompress();
 }
 
+function onScroll() {
+  if (scrollTicking) {
+    return;
+  }
+
+  scrollTicking = true;
+  requestAnimationFrame(() => {
+    scrollTicking = false;
+    runScrollUpdates();
+  });
+}
+
 function onResize() {
-  measureTilesMetrics();
-  onScroll();
+  const width = window.innerWidth;
+
+  if (width !== lastLayoutWidth) {
+    lastLayoutWidth = width;
+    refreshStableViewport();
+    measureTilesMetrics();
+    remeasureFloatingCta();
+  }
+
+  runScrollUpdates();
+}
+
+function remeasureFloatingCta() {
+  if (!ctaFloatWrap || !actionSection) {
+    return;
+  }
+
+  measureCtaMetrics();
+
+  if (ctaFloatWrap.classList.contains('is-floating')) {
+    pinFloatingPosition(true);
+  }
+
+  updateCtaFloat();
 }
 
 if (tilesZone && tilesPin && tilesInner) {
@@ -187,7 +253,7 @@ if (tilesZone && tilesPin && tilesInner) {
 }
 
 window.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
+runScrollUpdates();
 
 /* Testimonials carousel — wide cards, infinite loop via edge clones */
 const testimonialsViewport = document.getElementById('testimonials-viewport');
@@ -502,12 +568,17 @@ function unpinCtaFloat() {
 function updateCtaFloat() {
   if (!ctaSeen || ctaDismissed || !ctaFloatWrap || !ctaAnchor || !originalButtonDocBottom) return;
 
+  if (mobileLayoutQuery.matches) {
+    unpinCtaFloat();
+    return;
+  }
+
   if (footerInView) {
     unpinCtaFloat();
     return;
   }
 
-  const viewportHeight = window.innerHeight;
+  const viewportHeight = stableViewportHeight;
   const stickyLine = viewportHeight - ctaFloatBottom;
   const floatDocBottom = window.scrollY + viewportHeight - ctaFloatBottom;
   const canFloat = floatDocBottom <= originalButtonDocBottom + 1;
@@ -571,13 +642,6 @@ if (actionSection && ctaButton && actionCta && ctaFloatWrap) {
   });
 
   window.addEventListener('scroll', updateCtaFloat, { passive: true });
-  window.addEventListener('resize', () => {
-    measureCtaMetrics();
-    if (ctaFloatWrap.classList.contains('is-floating')) {
-      pinFloatingPosition(true);
-    }
-    updateCtaFloat();
-  });
 }
 
 /* Airtable interface forms do not send autosize events — heights are measured per width */
