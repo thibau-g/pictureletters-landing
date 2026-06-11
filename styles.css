@@ -265,13 +265,17 @@ img:not(.marquee-letter) {
 
 .hero-rows {
   display: grid;
+  grid-template-rows: repeat(4, 25vh);
   grid-template-rows: repeat(4, 25dvh);
+  height: 100vh;
   height: 100dvh;
   width: 100%;
 }
 
 .marquee-row {
+  height: 25vh;
   height: 25dvh;
+  max-height: 25vh;
   max-height: 25dvh;
   overflow: hidden;
   position: relative;
@@ -279,10 +283,15 @@ img:not(.marquee-letter) {
 
 .marquee-track {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
+  height: 25vh;
   height: 25dvh;
   width: max-content;
+  min-width: max-content;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .marquee-row--rtl .marquee-track {
@@ -298,41 +307,52 @@ img:not(.marquee-letter) {
 .marquee-row:nth-child(4) .marquee-track { animation-duration: 180s; }
 
 @keyframes marquee-rtl {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes marquee-ltr {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
 }
 
 .marquee-set {
   display: flex;
+  flex-wrap: nowrap;
+  flex: 0 0 auto;
   align-items: center;
+  height: 25vh;
   height: 25dvh;
+  gap: 2vh;
   gap: 2dvh;
+  padding-inline-end: 2vh;
   padding-inline-end: 2dvh;
 }
 
 .hero .marquee-letter {
   flex: 0 0 auto;
   display: block;
+  height: 23vh;
   height: 23dvh;
+  max-height: 23vh;
   max-height: 23dvh;
   width: auto;
   max-width: none;
   object-fit: contain;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 /* Compact hero — single marquee row (inner pages) */
 .hero--compact {
+  height: 25vh;
   height: 25dvh;
   overflow: hidden;
 }
 
 .hero--compact .hero-rows {
   grid-template-rows: 1fr;
+  height: 25vh;
   height: 25dvh;
 }
 
