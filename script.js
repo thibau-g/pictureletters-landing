@@ -75,12 +75,17 @@ function startJsMarquee(track, setWidth) {
 
   const direction = getMarqueeDirection(track);
   const durationMs = getMarqueeDuration(track);
-  let offset = direction === 'ltr' ? -setWidth : 0;
-  let lastTime = performance.now();
+  const startTime = performance.now();
+  let pausedAt = 0;
+  let accumulatedPause = 0;
   let paused = false;
 
   track.classList.add('marquee-track--js');
   track.style.animation = 'none';
+
+  function isPaused() {
+    return paused || track.dataset.marqueePaused === 'true';
+  }
 
   function tick(now) {
     const state = marqueeAnimators.get(track);
@@ -88,34 +93,38 @@ function startJsMarquee(track, setWidth) {
       return;
     }
 
-    if (!paused && !track.dataset.marqueePaused) {
-      const delta = Math.min(now - lastTime, 32);
-      const step = (setWidth / durationMs) * delta;
-
-      if (direction === 'rtl') {
-        offset -= step;
-        if (offset <= -setWidth) {
-          offset += setWidth;
-        }
-      } else {
-        offset += step;
-        if (offset >= 0) {
-          offset -= setWidth;
-        }
+    if (isPaused()) {
+      if (!pausedAt) {
+        pausedAt = now;
       }
-
-      track.style.transform = `translate3d(${Math.round(offset)}px, 0, 0)`;
+    } else if (pausedAt) {
+      accumulatedPause += now - pausedAt;
+      pausedAt = 0;
     }
 
-    lastTime = now;
+    const elapsed = Math.max(0, now - startTime - accumulatedPause);
+    const progress = (elapsed % durationMs) / durationMs;
+    const offset = direction === 'rtl'
+      ? -progress * setWidth
+      : -setWidth + progress * setWidth;
+
+    track.style.transform = `translate3d(${offset}px, 0, 0)`;
     state.rafId = requestAnimationFrame(tick);
   }
 
   marqueeAnimators.set(track, {
     rafId: requestAnimationFrame(tick),
     setPaused(nextPaused) {
+      const now = performance.now();
+
+      if (nextPaused && !paused) {
+        pausedAt = now;
+      } else if (!nextPaused && pausedAt) {
+        accumulatedPause += now - pausedAt;
+        pausedAt = 0;
+      }
+
       paused = nextPaused;
-      lastTime = performance.now();
     },
   });
 }
