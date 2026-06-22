@@ -8,7 +8,7 @@ let scrollTicking = false;
 let marqueeLayoutTimer;
 const marqueeAnimators = new Map();
 const MARQUEE_DESKTOP_DURATIONS = [144000, 168000, 136000, 180000];
-const MARQUEE_MOBILE_DURATIONS = [52000, 60000, 48000, 64000];
+const MARQUEE_MOBILE_DURATIONS = [68000, 78000, 62000, 83000];
 let marqueeScrollPauseTimer;
 
 function refreshStableViewport() {
@@ -1079,3 +1079,23 @@ function initLegalTiles() {
 
 initLegalTiles();
 initHeroMarquees();
+
+function initScrollHint() {
+  const hint = document.getElementById('scroll-hint');
+  const hero = document.querySelector('.hero:not(.hero--compact)');
+
+  if (!hint || !hero) {
+    return;
+  }
+
+  const update = () => {
+    const hidden = window.scrollY > 32;
+    hint.classList.toggle('is-hidden', hidden);
+    hint.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+  };
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+initScrollHint();
