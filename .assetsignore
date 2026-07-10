@@ -1,0 +1,12 @@
+# Keep Workers asset uploads to the public site only.
+node_modules/
+.git/
+.wrangler/
+package.json
+package-lock.json
+scripts/
+.gitignore
+.assetsignore
+wrangler.jsonc
+*.md
+.DS_Store
