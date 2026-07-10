@@ -7,10 +7,10 @@
   <title>Picture Letters</title>
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,600&family=Nunito:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=67" />
+  <link rel="preload" href="assets/fonts/nunito-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/lora-italic-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" imagesizes="(max-width: 700px) 45vw, 28vh" />
+  <link rel="stylesheet" href="styles.min.css?v=72" />
 </head>
 <body>
   <header class="site-header">
@@ -52,128 +52,128 @@
         <div class="marquee-row marquee-row--rtl">
           <div class="marquee-track">
             <div class="marquee-set">
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="eager" decoding="async" fetchpriority="high" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="eager" decoding="async" />
             </div>
             <div class="marquee-set" aria-hidden="true">
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
         <div class="marquee-row marquee-row--ltr">
           <div class="marquee-track">
             <div class="marquee-set">
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="eager" decoding="async" />
             </div>
             <div class="marquee-set" aria-hidden="true">
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
         <div class="marquee-row marquee-row--rtl">
           <div class="marquee-track">
             <div class="marquee-set">
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
             </div>
             <div class="marquee-set" aria-hidden="true">
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
         <div class="marquee-row marquee-row--ltr">
           <div class="marquee-track">
             <div class="marquee-set">
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
             </div>
             <div class="marquee-set" aria-hidden="true">
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/family.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/18.png?v=3" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/liz.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/heart.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/mum.png" alt="" loading="eager" decoding="async" />
-              <img class="marquee-letter" src="assets/samples/son.png" alt="" loading="eager" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/family-800.webp" srcset="assets/samples/family-480.webp 480w, assets/samples/family-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="209" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/18-800.webp" srcset="assets/samples/18-480.webp 480w, assets/samples/18-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="707" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/liz-800.webp" srcset="assets/samples/liz-480.webp 480w, assets/samples/liz-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="451" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/heart-800.webp" srcset="assets/samples/heart-480.webp 480w, assets/samples/heart-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="800" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/mum-800.webp" srcset="assets/samples/mum-480.webp 480w, assets/samples/mum-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="317" alt="" loading="lazy" decoding="async" />
+              <img class="marquee-letter" src="assets/samples/son-800.webp" srcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" sizes="(max-width: 700px) 45vw, 28vh" width="800" height="347" alt="" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -182,7 +182,7 @@
 
     <section class="statement" id="statement" aria-label="Statement">
       <div class="statement-inner">
-        <p class="statement-text" id="statement-text" aria-label="Captured memories, treasured forever.">
+        <p class="statement-text" id="statement-text">
           Captured memories, treasured forever.
         </p>
       </div>
@@ -191,34 +191,74 @@
     <section class="tiles-zone" id="occasions" aria-label="Occasions">
       <div class="tiles-pin">
         <div class="tiles-inner">
-          <p class="tiles-intro reveal-text" id="tiles-intro" aria-label="Designed for...">
+          <p class="tiles-intro reveal-text" id="tiles-intro">
             Designed for&hellip;
           </p>
           <div class="tiles-grid">
             <article class="tile">
               <div class="tile-photo-wrap">
-                <img class="tile-photo" src="assets/tiles/funerals.jpg?v=2" alt="" loading="lazy" />
+                <img
+                  class="tile-photo"
+                  src="assets/tiles/funerals-640.webp"
+                  srcset="assets/tiles/funerals-400.webp 400w, assets/tiles/funerals-640.webp 640w, assets/tiles/funerals-800.webp 800w, assets/tiles/funerals-1024.webp 1024w"
+                  sizes="(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 280px"
+                  width="1024"
+                  height="576"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <h2 class="tile-heading">Funerals &amp; Tributes</h2>
               <p class="tile-text">Giving those paying their respects a reason to smile at &ldquo;the time when we&hellip;&rdquo;, and a nice keepsake afterwards too.</p>
             </article>
             <article class="tile">
               <div class="tile-photo-wrap">
-                <img class="tile-photo" src="assets/tiles/birthdays.jpg" alt="" loading="lazy" />
+                <img
+                  class="tile-photo"
+                  src="assets/tiles/birthdays-640.webp"
+                  srcset="assets/tiles/birthdays-400.webp 400w, assets/tiles/birthdays-640.webp 640w, assets/tiles/birthdays-800.webp 800w, assets/tiles/birthdays-1024.webp 1024w"
+                  sizes="(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 280px"
+                  width="800"
+                  height="588"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <h2 class="tile-heading">Birthdays</h2>
               <p class="tile-text">A present that represents how far they&rsquo;ve come, painting their years in photos, whether they&rsquo;re 5 or 50.</p>
             </article>
             <article class="tile">
               <div class="tile-photo-wrap">
-                <img class="tile-photo" src="assets/tiles/weddings.jpg" alt="" loading="lazy" />
+                <img
+                  class="tile-photo"
+                  src="assets/tiles/weddings-640.webp"
+                  srcset="assets/tiles/weddings-400.webp 400w, assets/tiles/weddings-640.webp 640w, assets/tiles/weddings-800.webp 800w, assets/tiles/weddings-1024.webp 1024w"
+                  sizes="(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 280px"
+                  width="800"
+                  height="533"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <h2 class="tile-heading">Weddings</h2>
               <p class="tile-text">From the day they first met to the proposal, capture the happy couple&rsquo;s photos on a heart, a &ldquo;Mr &amp; Mrs&rdquo;, or just their names.</p>
             </article>
             <article class="tile">
               <div class="tile-photo-wrap">
-                <img class="tile-photo" src="assets/tiles/just-because.jpg?v=2" alt="" loading="lazy" />
+                <img
+                  class="tile-photo"
+                  src="assets/tiles/just-because-640.webp"
+                  srcset="assets/tiles/just-because-400.webp 400w, assets/tiles/just-because-640.webp 640w, assets/tiles/just-because-800.webp 800w, assets/tiles/just-because-1024.webp 1024w"
+                  sizes="(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 280px"
+                  width="1024"
+                  height="576"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <h2 class="tile-heading">Just Because</h2>
               <p class="tile-text">We don&rsquo;t always need a celebration to celebrate. So put family photos on FAMILY letters and hang them on your wall. Or make each child&rsquo;s initial and hang it on their door.</p>
@@ -236,20 +276,16 @@
         </li>
         <li class="feature">
           <svg class="feature-tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <p class="feature-text"><span class="feature-title">Display Ready</span> &mdash; stands included, with pre-drilled holes for hanging</p>
-        </li>
-        <li class="feature">
-          <svg class="feature-tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <p class="feature-text"><span class="feature-title">Solid &amp; Lasting</span> &mdash; made from melamine-coated 12mm MDF</p>
         </li>
         <li class="feature">
           <svg class="feature-tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <p class="feature-text"><span class="feature-title">All Occasions</span> &mdash; letters, numbers, shapes, or request the shape you desire</p>
+          <p class="feature-text"><span class="feature-title">All Occasions</span> &mdash; letters, numbers, shapes, or request a shape</p>
         </li>
       </ul>
     </section>
 
-    <section class="testimonials" aria-label="Testimonials">
+    <section class="testimonials" id="testimonials" aria-label="Testimonials" hidden>
       <div class="testimonials-viewport" id="testimonials-viewport">
         <div class="testimonials-track" id="testimonials-track">
           <figure class="testimonial-card" data-index="0">
@@ -294,7 +330,7 @@
         <div class="action-cta" id="action-cta">
           <span class="action-cta-anchor" id="action-cta-anchor" aria-hidden="true"></span>
           <div class="action-cta-float-wrap" id="action-cta-float-wrap">
-            <button type="button" class="btn btn-primary" id="cta-button">Choose Your Letters</button>
+            <a href="https://app.pictureletters.com/account/create" class="btn btn-primary" id="cta-button">Choose Your Shapes</a>
             <button type="button" class="cta-dismiss" id="cta-dismiss" aria-label="Unpin button">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -356,6 +392,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=33"></script>
+  <script src="script.js?v=36"></script>
 </body>
 </html>

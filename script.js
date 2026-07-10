@@ -284,6 +284,12 @@ function buildRevealChars(textEl) {
   const raw = textEl.textContent.trim();
   textEl.textContent = '';
 
+  // Screen-reader name: animated chars below are aria-hidden
+  const srOnly = document.createElement('span');
+  srOnly.className = 'visually-hidden';
+  srOnly.textContent = raw;
+  textEl.appendChild(srOnly);
+
   const chars = [];
 
   for (const char of raw) {
@@ -423,7 +429,7 @@ function updateTilesCompress() {
 function updateTilesEntrance(introProgress) {
   if (tiles.length === 0 || !tilesZone) return;
 
-  if (!desktopTilesQuery.matches) {
+  if (!desktopTilesQuery.matches || prefersReducedMotion) {
     tiles.forEach((tile) => tile.classList.add('is-visible'));
     return;
   }
@@ -433,23 +439,9 @@ function updateTilesEntrance(introProgress) {
     return;
   }
 
-  if (prefersReducedMotion) {
-    tiles.forEach((tile) => tile.classList.add('is-visible'));
-    return;
-  }
-
-  const sectionRect = tilesZone.getBoundingClientRect();
-  const viewportHeight = stableViewportHeight;
-  const pastIntro = Math.max(0, -sectionRect.top);
-  const flyInDistance = tilesMetrics?.runway
-    ? Math.min(viewportHeight * 0.5, tilesMetrics.runway * 0.55)
-    : viewportHeight * 0.45;
-  const tileProgress = flyInDistance > 0 ? Math.min(1, pastIntro / flyInDistance) : 1;
-
-  tiles.forEach((tile, index) => {
-    const threshold = index / tiles.length;
-    tile.classList.toggle('is-visible', tileProgress > threshold);
-  });
+  // Intro is complete — reveal tiles immediately. (Previously required extra
+  // scroll past sectionTop===0, which left a long empty "Designed for..." state.)
+  tiles.forEach((tile) => tile.classList.add('is-visible'));
 }
 
 function runScrollUpdates() {
@@ -984,52 +976,19 @@ const ORDER_FORM_SRC = 'https://airtable.com/embed/appmNgmruz2Hb4JU2/pageVyjotVc
 
 function initOrderModal() {
   const modal = document.getElementById('order-modal');
-  const openBtn = document.getElementById('cta-button');
   const closeBtn = document.getElementById('order-modal-close');
   const backdrop = modal?.querySelector('[data-order-modal-close]');
-  const iframe = document.getElementById('order-form-embed');
 
-  if (!modal || !openBtn) {
+  if (!modal) {
     return;
-  }
-
-  let lastFocus = null;
-  let refreshEmbedHeight = null;
-
-  function ensureEmbed() {
-    if (!iframe) {
-      return;
-    }
-
-    if (!iframe.src && iframe.dataset.src) {
-      iframe.src = iframe.dataset.src;
-    }
-
-    refreshEmbedHeight = setupAirtableFormEmbed(iframe) ?? refreshEmbedHeight;
-    window.setTimeout(() => refreshEmbedHeight?.(), 100);
-    window.setTimeout(() => refreshEmbedHeight?.(), 500);
-  }
-
-  function openModal() {
-    lastFocus = document.activeElement;
-    modal.setAttribute('aria-hidden', 'false');
-    modal.classList.add('is-open');
-    document.body.classList.add('order-modal-open');
-    ensureEmbed();
-    closeBtn?.focus();
   }
 
   function closeModal() {
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('order-modal-open');
-
-    if (lastFocus && typeof lastFocus.focus === 'function') {
-      lastFocus.focus();
-    }
   }
 
-  openBtn.addEventListener('click', openModal);
   closeBtn?.addEventListener('click', closeModal);
   backdrop?.addEventListener('click', closeModal);
 

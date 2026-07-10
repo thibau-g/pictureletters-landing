@@ -1,0 +1,13 @@
+{
+  "name": "pictureletters-landing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "optimize-images": "node scripts/optimize-images.mjs",
+    "minify-css": "node scripts/minify-css.mjs"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "sharp": "^0.33.5"
+  }
+}

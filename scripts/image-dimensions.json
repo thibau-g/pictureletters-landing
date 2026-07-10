@@ -1,0 +1,42 @@
+{
+  "assets/samples/son": {
+    "width": 800,
+    "height": 347
+  },
+  "assets/samples/18": {
+    "width": 800,
+    "height": 707
+  },
+  "assets/samples/mum": {
+    "width": 800,
+    "height": 317
+  },
+  "assets/samples/heart": {
+    "width": 800,
+    "height": 800
+  },
+  "assets/samples/family": {
+    "width": 800,
+    "height": 209
+  },
+  "assets/samples/liz": {
+    "width": 800,
+    "height": 451
+  },
+  "assets/tiles/funerals": {
+    "width": 1024,
+    "height": 576
+  },
+  "assets/tiles/birthdays": {
+    "width": 800,
+    "height": 588
+  },
+  "assets/tiles/weddings": {
+    "width": 800,
+    "height": 533
+  },
+  "assets/tiles/just-because": {
+    "width": 1024,
+    "height": 576
+  }
+}
