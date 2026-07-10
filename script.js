@@ -786,7 +786,10 @@ function measureCtaMetrics() {
 function pinFloatingPosition(useAnchor = false) {
   if (!ctaFloatWrap || !actionCta) return;
 
-  const width = ctaFloatWrap.offsetWidth;
+  // Prefer the button's laid-out width; ceil avoids subpixel squeeze/wrap when fixed.
+  const width = Math.ceil(
+    (ctaButton?.getBoundingClientRect().width || ctaFloatWrap.offsetWidth)
+  );
   let left;
 
   if (useAnchor) {

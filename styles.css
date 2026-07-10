@@ -1163,8 +1163,9 @@ img:not(.marquee-letter) {
 
 .action-cta-float-wrap.is-floating .btn-primary {
   width: 100%;
-  min-width: 0;
+  min-width: 100%;
   margin: 0;
+  white-space: nowrap;
 }
 
 .action-cta-float-wrap.is-floating .btn-primary:hover {
@@ -1238,6 +1239,7 @@ img:not(.marquee-letter) {
   font-size: clamp(1.35rem, 3.2vw, 1.75rem);
   font-weight: 600;
   letter-spacing: 0.015em;
+  white-space: nowrap;
   color: #fff;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   box-shadow:
