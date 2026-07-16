@@ -10,6 +10,10 @@ const jobs = [
     dir: 'assets/samples',
     files: ['son.png', '18.png', 'mum.png', 'heart.png', 'family.png', 'liz.png'],
     widths: [480, 800],
+    // Wide words need a larger max width so height stays usable in the height-scaled marquee.
+    fileWidths: {
+      'family.png': [480, 800, 1600],
+    },
   },
   {
     dir: 'assets/tiles',
@@ -23,10 +27,16 @@ async function optimizeOne(inputPath, outDir, baseName, width) {
   const meta = await image.metadata();
   const targetWidth = Math.min(width, meta.width || width);
 
-  const resized = image.clone().resize({
+  let resized = image.clone().resize({
     width: targetWidth,
     withoutEnlargement: true,
   });
+
+  // Mild sharpening helps wide, short masters (e.g. FAMILY) look crisper when
+  // displayed at marquee height on retina screens.
+  if (baseName === 'family') {
+    resized = resized.sharpen({ sigma: 0.6 });
+  }
 
   const webpPath = path.join(outDir, `${baseName}-${width}.webp`);
   const jpgPath = path.join(outDir, `${baseName}-${width}.jpg`);
@@ -65,10 +75,11 @@ async function main() {
     for (const file of job.files) {
       const inputPath = path.join(dir, file);
       const baseName = path.parse(file).name;
+      const widths = job.fileWidths?.[file] || job.widths;
       console.log(`\n${file}`);
 
       let dims = null;
-      for (const width of job.widths) {
+      for (const width of widths) {
         dims = await optimizeOne(inputPath, dir, baseName, width);
       }
 

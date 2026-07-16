@@ -16,8 +16,8 @@
     "height": 800
   },
   "assets/samples/family": {
-    "width": 800,
-    "height": 209
+    "width": 1024,
+    "height": 267
   },
   "assets/samples/liz": {
     "width": 800,
@@ -28,8 +28,8 @@
     "height": 576
   },
   "assets/tiles/birthdays": {
-    "width": 800,
-    "height": 588
+    "width": 1024,
+    "height": 708
   },
   "assets/tiles/weddings": {
     "width": 800,
