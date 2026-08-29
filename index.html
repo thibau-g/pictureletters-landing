@@ -10,7 +10,8 @@
   <link rel="preload" href="assets/fonts/nunito-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/lora-italic-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="assets/samples/son-480.webp 480w, assets/samples/son-800.webp 800w" imagesizes="(max-width: 700px) 45vw, 28vh" />
-  <link rel="stylesheet" href="styles.min.css?v=73" />
+  <link rel="stylesheet" href="styles.min.css?v=78" />
+  <script type="module" src="referral.js?v=1"></script>
 </head>
 <body>
   <header class="site-header">
@@ -199,11 +200,11 @@
               <div class="tile-photo-wrap">
                 <img
                   class="tile-photo"
-                  src="assets/tiles/funerals-640.webp"
-                  srcset="assets/tiles/funerals-400.webp 400w, assets/tiles/funerals-640.webp 640w, assets/tiles/funerals-800.webp 800w, assets/tiles/funerals-1024.webp 1024w"
+                  src="assets/tiles/funerals-640.webp?v=2"
+                  srcset="assets/tiles/funerals-400.webp?v=2 400w, assets/tiles/funerals-640.webp?v=2 640w, assets/tiles/funerals-800.webp?v=2 800w, assets/tiles/funerals-1024.webp?v=2 1024w"
                   sizes="(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 280px"
                   width="1024"
-                  height="576"
+                  height="768"
                   alt=""
                   loading="lazy"
                   decoding="async"
@@ -330,11 +331,61 @@
         <div class="action-cta" id="action-cta">
           <span class="action-cta-anchor" id="action-cta-anchor" aria-hidden="true"></span>
           <div class="action-cta-float-wrap" id="action-cta-float-wrap">
-            <a href="https://app.pictureletters.com/account/create" class="btn btn-primary" id="cta-button">Choose Your Shapes</a>
+            <a href="https://app.pictureletters.com/account/create" class="btn btn-primary" id="cta-button">
+              <span class="btn-label">Choose Your Shapes</span>
+              <span class="btn-sublabel">From £40.00 per shape</span>
+            </a>
             <button type="button" class="cta-dismiss" id="cta-dismiss" aria-label="Unpin button">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+      <div class="faq-inner">
+        <h2 class="faq-heading" id="faq-heading">Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">When will I receive my order?</summary>
+            <div class="faq-answer">
+              <p>We aim to print and ship your masterpiece within 5 days of receiving your submission. If you need it for a certain date or occasion, we&rsquo;ll work with you to get it to you in time.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Is the design process difficult?</summary>
+            <div class="faq-answer">
+              <p>Nope, it&rsquo;s super easy! Upload your photos, drag them onto your shapes, crop them as you please, and job done! You can always call on our team to help too.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How can I display my shapes?</summary>
+            <div class="faq-answer">
+              <p>All orders are shipped with strong wall-adhesive magnets that are easy to install.</p>
+              <ol class="faq-steps">
+                <li>Remove the adhesive tape on the black magnets.</li>
+                <li>Place them on the back of your shape(s).</li>
+                <li>Magnet the white parts onto the black parts, ensuring the adhesive tape is facing up.</li>
+                <li>Remove the adhesive tape on the white parts.</li>
+                <li>Hold your shape to the wall, using a spirit level, and press firmly.</li>
+                <li>Allow 24 hours before attempting to remove your shapes from the wall to ensure proper adhesion.</li>
+              </ol>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How much do they cost?</summary>
+            <div class="faq-answer">
+              <p>Our shapes start from &pound;40 per item.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How do I care for my pictures?</summary>
+            <div class="faq-answer">
+              <p>Keep your product in a dry place, out of direct sunlight, and avoid contact with sharp objects and corrosive chemicals.</p>
+              <p>Clean gently with a lightly damp microfibre cloth. Do not use chemical or any abrasive cleaning products.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>

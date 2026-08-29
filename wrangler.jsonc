@@ -2,10 +2,22 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "pictureletters-landing",
   "compatibility_date": "2026-07-10",
+  "main": "src/worker.js",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/",
+      "/*.html",
+      "/index.html",
+      "/about.html",
+      "/gallery.html",
+      "/contact.html",
+      "/legal.html",
+      "/become-a-partner.html"
+    ]
   }
 }
